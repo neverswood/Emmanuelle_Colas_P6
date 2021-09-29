@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/38e93aa0fe.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" rel="stylesheet" alt="Fisheye Home page" id="logo">Fish<i class="fas fa-camera"
+                aria-hidden="true"></i>
+            ye</a>
+    </header>
+    <main id="photographer-page">
+
+        <section id="presentation-photographer"></section>
+        <section id="work-photographer">
+            <div class="sorting"></div>
+            <div class="box-list">
+            </div>
+            <div class="likes">
+                <span class="totalLike"></span>
+                <span class="price"></span>
+            </div>
+        </section>
+        <section id="modal-photographer">
+            <div class="bground">
+                <div class="content">
+                    <span class="close" id="close"></span>
+                    <div id="modal-message"></div>
+                    <div class="modal-body">
+                        <form name="contact" id="sectionForm" class="sectionForm" action="photographer.html"
+                            method="get">
+                            <div class="formData">
+                                <label for="first">Prénom</label><br>
+                                <input class="text-control" class="not-valid" type="text" id="first" name="first" /><br>
+                                <span class="error" id="firstError"></span>
+                            </div>
+                            <div class="formData">
+                                <label for="last">Nom</label><br>
+                                <input class="text-control" type="text" id="last" name="last" /><br>
+                                <span class="error" id="lastError"></span>
+                            </div>
+                            <div class="formData">
+                                <label for="email">E-mail</label><br>
+                                <input class="text-control" type="email" id="email" name="email" /><br>
+                                <span class="error" id="emailError"></span>
+                            </div>
+                            <div class="formData">
+                                <label for="message">Votre message</label><br>
+                                <input class="text-control--modified" type="text" id="message" name="message" /><br>
+                            </div>
+                            <input class="btn-submit" type="submit" class="button" value="Envoyer" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="carousel" aria-label="image-closeup-view">
+            <div id="carousel__div">
+                <span class="close" id="closeCarousel" aria-label="close-dialog"></span>
+                <a href="#" id="left-btn" class="btn-arrow" aria-label="Previous-image"
+                    aria-controls="carousel-list-items"><i class="arrow"></i></a>
+                <div class="carousel__div--container">
+                    <!--<div class="carousel__viewport--image">
+                    </div>
+                    <div class="carousel__viewport--video">
+
+                    </div>-->
+
+                </div>
+                <a href="#" id="right-btn" class="btn-arrow" aria-label="next-image"
+                    aria-controls="carousel-list-items"><i class="arrow"></i></a>
+
+        </section>
+
+
+    </main>
+    <script src="Javascript/PhotographerPage.js"></script>
+
+
+</body>
+
+</html>
