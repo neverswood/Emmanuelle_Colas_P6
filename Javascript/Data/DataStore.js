@@ -1,6 +1,7 @@
 import Photographer from "./Photographer.js";
-import ImageMedia from "./ImageMedia.js";
-import VideoMedia from "./VideoMedia.js";
+import ImageMedia from "../ImageMedia.js";
+import VideoMedia from "../VideoMedia.js";
+import UI from "../Components/UIPhotographerItem.js";
 
 export default class DataStore {
   constructor(data) {
@@ -51,3 +52,10 @@ function createMedia(mediaObject) {
     throw new Error("Unknown media type");
   }
 }
+/*
+const main = async () => {
+  const ui = new UI();
+  document.getElementById("photographers").innerHTML = ui.getHtml();
+};
+
+main();*/

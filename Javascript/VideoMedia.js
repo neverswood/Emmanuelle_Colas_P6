@@ -1,4 +1,4 @@
-import Media from "./Medias.js";
+import Media from "./Data/Media.js";
 
 export default class VideoMedia extends Media {
   constructor(
