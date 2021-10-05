@@ -1,16 +1,18 @@
 import DataStore from "./Data/DataStore.js";
-import UIPhotographerItem from "./Components/UIPhotographerItem.js";
+import UI from "./Components/UI.js";
 
 async function getDataStore() {
   const response = await fetch("../api/FishEyeData.json");
   const data = await response.json();
+  console.log(data);
+
   return new DataStore(data);
 }
-const data = await getDataStore();
 
 const main = async () => {
-  const ui = new UIPhotographerItem();
-  document.getElementById("photographers").innerHTML = ui.getHTML();
+  const dataStore = await getDataStore();
+  const ui = new UI(dataStore);
+  document.getElementById("photographers").innerHTML = ui.getHtml();
 };
 
 main();

@@ -9,4 +9,12 @@ export default class Photographer {
     this.price = price;
     this.portrait = portrait;
   }
+
+  getName() {
+    return this.name;
+  }
+
+  setName(name) {
+    return (this.name = name);
+  }
 }

@@ -118,7 +118,7 @@ main {
   margin: 148px 90px 10px 90px;
 }
 
-.photographer img {
+#photographers img {
   object-fit: cover;
   width: 200px;
   height: 200px;

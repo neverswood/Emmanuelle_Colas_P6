@@ -1,23 +1,37 @@
 import Photographer from "../Data/Photographer.js";
 
-export default class UIPhotographerItem extends Photographer {
-  constructor(name, id, city, country, tags, tagline, price, portrait) {
-    super(name, id, city, country, tags, tagline, price, portrait);
+export default class UIPhotographerItem {
+  constructor(photographer) {
+    //
+    this.photographer = photographer; //
   }
 
-  getHTML() {
-    /*return `<p>lol</p>`;*/
+  getHtml() {
+    console.log("rrr", this.photographer.getName());
     return `
-    <a href="/photographer.html?id=${this.id}">
-    <img src="/Sample_Photos/Photographers_ID_Photos/${this.portrait}" alt=""/>
-    <h2>${this.name}</h2>
+    <a href="/photographer.html?id=${this.photographer.id}">
+    <img src="/Sample_Photos/Photographers_ID_Photos/${
+      this.photographer.portrait
+    }" alt=""/>
+    <h2>${this.photographer.name}</h2>
     </a>
     <div class="photographer_presentation">
-    <h3>${this.city + " , " + " " + this.country}</h3>
-    <p>${this.tagline}</p>
-    <span>${this.price + "€/jour"}</span>
+    <h3>${this.photographer.city + " , " + " " + this.photographer.country}</h3>
+    <p>${this.photographer.tagline}</p>
+    <span>${this.photographer.price + "€/jour"}</span>
     </div>
-
+    <div class="photographer-tag">
+    ${this.photographer.tags
+      .map(
+        (tag) =>
+          `
+        <a href="#">
+            <span data-filter=${tag}>#${tag}</span> 
+        </a>
+        `
+      )
+      .join("")}
+    </div>
     `;
   }
 }
