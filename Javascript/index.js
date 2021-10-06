@@ -1,5 +1,6 @@
 import DataStore from "./Data/DataStore.js";
-import UI from "./Components/UI.js";
+import UIHomePage from "./Components/UIHomePage.js";
+import UINavBarHomePage from "./Components/UINavBarHomePage.js";
 
 async function getDataStore() {
   const response = await fetch("../api/FishEyeData.json");
@@ -11,8 +12,11 @@ async function getDataStore() {
 
 const main = async () => {
   const dataStore = await getDataStore();
-  const ui = new UI(dataStore);
-  document.getElementById("photographers").innerHTML = ui.getHtml();
+  const uiHomePage = new UIHomePage(dataStore);
+  document.getElementById("photographers").innerHTML = uiHomePage.getHtml();
+  const uiNavigationBarTags = new UINavBarHomePage(dataStore);
+  document.getElementById("header-navbar").innerHTML =
+    uiNavigationBarTags.getHtml();
 };
 
 main();

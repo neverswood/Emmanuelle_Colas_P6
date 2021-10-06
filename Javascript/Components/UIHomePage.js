@@ -9,6 +9,7 @@ export default class UIHomePage {
   }
 
   getHtml() {
+    console.log("koko", this.photographerItems);
     return `${this.photographerItems
       .map((photographerItem) => photographerItem.getHtml())
       .join("")}`;
