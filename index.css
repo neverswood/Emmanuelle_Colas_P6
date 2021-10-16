@@ -125,6 +125,10 @@ main {
   border-radius: 100px;
 }
 
+#presentation-photographer img {
+  margin: 60px 30px 0 0;
+}
+
 .photographer h2 {
   font-size: 36px;
   color: #d3573c;
@@ -184,9 +188,10 @@ main {
 }
 
 .open {
-  order: 1;
+  order: 0;
   background-color: #901c1c;
-  height: 40px;
+  height: 55px;
+  width: 130px;
   color: white;
   border: transparent;
   border-radius: 5px;

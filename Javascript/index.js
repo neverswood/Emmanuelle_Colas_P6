@@ -1,8 +1,8 @@
 import DataStore from "./Data/DataStore.js";
 import UIHomePage from "./Components/UIHomePage.js";
 import UINavBarHomePage from "./Components/UINavBarHomePage.js";
-import UINavigationBarTags from "./Components/UINavigationBarTags.js";
 import UIPhotographerPage from "./Components/UIPhotographerPage.js";
+import UIModalContactPage from "./Components/UIModalContactPage.js";
 
 async function getDataStore() {
   const response = await fetch("../api/FishEyeData.json");
@@ -27,14 +27,13 @@ const main = async () => {
     const uiNavigationBarTags = new UINavBarHomePage(dataStore);
     document.getElementById("header-navbar-link").innerHTML =
       uiNavigationBarTags.getHtml();
-    //const setTags = new UISetTags();
-    //const uiSetTags = setTags.displayPage(dataStore);
-    ///new UINavigationBarTags().getHtml(uiSetTags);
+
+    const uiModalContact = new UIModalContactPage(dataStore);
+    document.getElementById("modal-body").innerHTML =
+      uiModalContact.LaunchContact();
   }
 };
-/*const uiPhotographerInfos = new UIPhotographerInfos(dataStore);
-document.getElementById("presentation-photographer").innerHTML =
-  uiPhotographerInfos.getHtmlPresentation();*/
+
 console.log("papa", window.location.pathname);
 
 main();
