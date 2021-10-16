@@ -1,7 +1,6 @@
 import DataStore from "./Data/DataStore.js";
 import UIHomePage from "./Components/UIHomePage.js";
 import UINavBarHomePage from "./Components/UINavBarHomePage.js";
-import UISetTags from "./Components/UISetTags.js";
 import UINavigationBarTags from "./Components/UINavigationBarTags.js";
 import UIPhotographerPage from "./Components/UIPhotographerPage.js";
 
@@ -15,7 +14,11 @@ async function getDataStore() {
 
 const main = async () => {
   const dataStore = await getDataStore();
-  if (window.location.pathname.includes("/index.html")) {
+  if (window.location.pathname.includes("/photographer.html")) {
+    const uiPhotographerInfos = new UIPhotographerPage(dataStore);
+    document.getElementById("presentation-photographer").innerHTML =
+      uiPhotographerInfos.getHtml();
+  } else {
     const uiHomePage = new UIHomePage(dataStore);
     document.getElementById("photographers").innerHTML = uiHomePage.getHtml();
     /*document.getElementById("header-navbar").innerHTML =
@@ -27,10 +30,6 @@ const main = async () => {
     //const setTags = new UISetTags();
     //const uiSetTags = setTags.displayPage(dataStore);
     ///new UINavigationBarTags().getHtml(uiSetTags);
-  } else {
-    const uiPhotographerInfos = new UIPhotographerPage(dataStore);
-    document.getElementById("presentation-photographer").innerHTML =
-      uiPhotographerInfos.getHtml();
   }
 };
 /*const uiPhotographerInfos = new UIPhotographerInfos(dataStore);

@@ -1,24 +1,24 @@
 export default class UINavigationBarTags {
-  constructor(photographer) {
+  constructor(tags) {
     //
     this.tags = tags;
   }
 
   getHtml() {
-    console.log("rorororo", this.photographer.tags);
+    console.log("rorororo", this.tags);
     return `  
-          <div class="span-hidden">
+          <span class="span-hidden">
           ${this.tags
             .map(
               (tag) =>
                 `
-              <a href="#">
+              <a href="#" id="btnTags">
                   <span data-filter=${tag}>#${tag}</span> 
               </a>
               `
             )
             .join("")}
-          </div>
+          </span>
           `;
   }
 }
