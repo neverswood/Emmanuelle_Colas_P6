@@ -12,8 +12,8 @@ export default class UINavigationBarTags {
             .map(
               (tag) =>
                 `
-              <a href="#" id="btnTags">
-                  <span data-filter=${tag}>#${tag}</span> 
+              <a href="#" >
+                  <span id="btnTags" data-filter=${tag}>#${tag}</span> 
               </a>
               `
             )

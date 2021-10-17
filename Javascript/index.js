@@ -2,7 +2,7 @@ import DataStore from "./Data/DataStore.js";
 import UIHomePage from "./Components/UIHomePage.js";
 import UINavBarHomePage from "./Components/UINavBarHomePage.js";
 import UIPhotographerPage from "./Components/UIPhotographerPage.js";
-import UIModalContactPage from "./Components/UIModalContactPage.js";
+//import UIModalContactPage from "./Components/UIModalContactPage.js";
 
 async function getDataStore() {
   const response = await fetch("../api/FishEyeData.json");
@@ -28,9 +28,9 @@ const main = async () => {
     document.getElementById("header-navbar-link").innerHTML =
       uiNavigationBarTags.getHtml();
 
-    const uiModalContact = new UIModalContactPage(dataStore);
+    /*const uiModalContact = new UIModalContactPage(dataStore);
     document.getElementById("modal-body").innerHTML =
-      uiModalContact.LaunchContact();
+      uiModalContact.LaunchContact();*/
   }
 };
 

@@ -1,13 +1,17 @@
-export default class UIModalContactPage {
+/*export default class UIModalContactPage {
   constructor(datastore) {}
 
   LaunchContact() {
     const modalBtn = document.querySelector(".open");
+    console.log("pouuuuuuu", document.querySelector(".open"));
 
     // Launch modal
     modalBtn.addEventListener("click", launchModal);
 
     function launchModal() {
+      console.log("pouuuuuuu", document.querySelector(".open"));
+
+      console.log("youuuuuu", modalbg);
       modalbg.style.display = "block";
       bodystyle.style.position = "fixed";
       document.getElementById("sectionForm").className = "sectionFormOpen";
@@ -22,5 +26,7 @@ export default class UIModalContactPage {
     }
 
     close.addEventListener("click", closeModal);
+    console.log("pouuuuuuu", document.querySelector(".open"));
   }
 }
+*/
