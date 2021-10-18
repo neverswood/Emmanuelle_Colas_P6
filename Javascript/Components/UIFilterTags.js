@@ -1,7 +1,8 @@
-export default class UIFilterTags {
+/*export default class UIFilterTags {
   constructor(photographer) {
     //
     this.photographer = photographer; //
+    this.callEvent();
   }
 
   getHtml1() {
@@ -14,4 +15,25 @@ export default class UIFilterTags {
     </a>
     `;
   }
+
+  callEvent() {
+    const tags = document.querySelectorAll("btnTags");
+    tags.forEach((tag) =>
+      tag.addEventListener("click", () => this.filter(tag.id))
+    );
+  }
+
+  filter(tag) {
+    this.photographer.map((photographer) => {
+      const photographers = document.getElementById(photographers.id);
+      const isFiltered = photographer.tags.includes(tag.toLowerCase());
+
+      if (!isFiltered) {
+        photographer.style.display = "none";
+      } else {
+        photographer.style.display = "block";
+      }
+    });
+  }
 }
+*/
