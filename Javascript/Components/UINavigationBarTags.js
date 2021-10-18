@@ -1,42 +1,29 @@
 export default class UINavigationBarTags {
-  constructor(tags) {
+  constructor(dataStore) {
     //
-    this.tags = tags;
+    this.photographers = dataStore.photographers;
     this.callEvent();
-  }
-  getHtml() {
-    console.log(this.callEvent());
-
-    return `  
-          ${this.tags
-            .map(
-              (tag) =>
-                `
-              <a href="#" >
-                  <span id="btnTags" data-filter=${tag}>#${tag}</span> 
-              </a>
-              `
-            )
-            .join("")}
-          `;
   }
 
   callEvent() {
-    const tags = document.querySelectorAll("btnTags");
-    tags.forEach((tag) =>
-      tag.addEventListener("click", () => this.filter(tag.id))
-    );
+    const tags = document.querySelectorAll("#btnTags");
+    tags.forEach((tag) => {
+      const filterName = tag.getAttribute("data-filter");
+      tag.addEventListener("click", () => this.filter(filterName));
+    });
   }
 
   filter(tag) {
-    this.photographer.map((photographer) => {
-      const photographers = document.getElementById(photographers.id);
+    console.log("photo", this.photographers);
+    this.photographers.map((photographer) => {
+      const photographerElement = document.getElementById(photographer.id);
+      console.log("jio", photographer, tag);
       const isFiltered = photographer.tags.includes(tag.toLowerCase());
 
       if (!isFiltered) {
-        photographer.style.display = "none";
+        photographerElement.style.display = "none";
       } else {
-        photographer.style.display = "block";
+        photographerElement.style.display = "block";
       }
     });
   }

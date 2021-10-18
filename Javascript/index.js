@@ -2,6 +2,7 @@ import DataStore from "./Data/DataStore.js";
 import UIHomePage from "./Components/UIHomePage.js";
 import UINavBarHomePage from "./Components/UINavBarHomePage.js";
 import UIPhotographerPage from "./Components/UIPhotographerPage.js";
+import UINavigationBarTags from "./Components/UINavigationBarTags.js";
 //import UIModalContactPage from "./Components/UIModalContactPage.js";
 
 async function getDataStore() {
@@ -24,16 +25,12 @@ const main = async () => {
     /*document.getElementById("header-navbar").innerHTML =
       uiHomePage.getHtmlTags();*/
 
-    const uiNavigationBarTags = new UINavBarHomePage(dataStore);
-    document.getElementById("header-navbar-link").innerHTML =
-      uiNavigationBarTags.getHtml();
+    new UINavigationBarTags(dataStore);
 
     /*const uiModalContact = new UIModalContactPage(dataStore);
     document.getElementById("modal-body").innerHTML =
       uiModalContact.LaunchContact();*/
   }
 };
-
-console.log("papa", window.location.pathname);
 
 main();

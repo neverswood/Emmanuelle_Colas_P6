@@ -1,10 +1,12 @@
+import UIModalContact from "./UIModalContact.js";
+
 export default class UIPhotographerInfos {
   constructor(photographer) {
     this.photographer = photographer;
+    this.callEvent();
   }
 
   getHtml() {
-    console.log("vloum", this.photographer);
     return `
     
         <div>
@@ -24,11 +26,17 @@ export default class UIPhotographerInfos {
           .join("")}
         </div>
         </div>
-
-        <button class="open">Contactez-moi</button>
+        <button id="open" class="open" type="button">Contactez-moi</button>
         <img  src="/Sample_Photos/Photographers_ID_Photos/${
           this.photographer.portrait
         }" alt="" />
         `;
+  }
+
+  callEvent() {
+    const modalBtn = document.getElementById("open");
+    modalBtn.addEventListener("click", () => {
+      new UIModalContact().modal({ open: true });
+    });
   }
 }

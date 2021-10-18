@@ -5,9 +5,8 @@ export default class UIPhotographerItem {
   }
 
   getHtml() {
-    console.log("aaaa", this.photographer.tags);
     return `
-    <div class="photographer">
+    <div class="photographer" id=${this.photographer.id}>
     <a href="/photographer.html?id=${this.photographer.id}">
     <img src="/Sample_Photos/Photographers_ID_Photos/${
       this.photographer.portrait

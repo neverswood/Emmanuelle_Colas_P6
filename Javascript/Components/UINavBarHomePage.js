@@ -13,16 +13,13 @@ export default class UINavBarHomePage {
   }
 
   getHtml() {
-    console.log("blop", this.newTags);
-    console.log("rototo", this.tags);
-    console.log("bonbonbon", this.navigationBarTags);
     return `${this.navigationBarTags.getHtml()}`;
   }
 
   callEvent() {
     const tagsBtn = document.getElementById("btnTags");
     tagsBtn.addEventListener("click", function (element) {
-      this.tags.newTags(elements);
+      this.tags.newTags(element);
     });
   }
 }
