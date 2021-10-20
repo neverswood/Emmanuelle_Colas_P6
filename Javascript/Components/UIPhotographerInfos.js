@@ -34,6 +34,16 @@ export default class UIPhotographerInfos {
         `;
   }
 
+  /*getHtml2() {
+    console.log("rrrr", this.photographer.name);
+    return `
+    <div id="modal-name">
+    <p>Contactez-moi</p>
+    <span>${this.photographer.name}</span>
+    </div>
+    `;
+  }*/
+
   callEvent() {
     const modalBtn = document.getElementById("open");
     //const modalBtn = document.querySelectorAll("#open");

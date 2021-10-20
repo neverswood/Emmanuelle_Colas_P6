@@ -408,6 +408,10 @@ label {
   margin: 20px;
 }
 
+#header-form p {
+  margin: auto;
+}
+
 #modal-name {
   display: block;
   color: black;

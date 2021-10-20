@@ -22,10 +22,9 @@ const main = async () => {
     document.getElementById("presentation-photographer").innerHTML =
       uiPhotographerPage.getHtml();
     new UIPhotographerInfos().callEvent();
-    const formContact = new FormContact(dataStore);
-    document.getElementById("modal-body").innerHTML = formContact.getHtml();
+    document.getElementById("header-form").innerHTML =
+      uiPhotographerPage.getHtml2();
     new UIModalContactPage().callEvent();
-    //new UIModalContactPage();
   } else {
     const uiHomePage = new UIHomePage(dataStore);
     document.getElementById("photographers").innerHTML = uiHomePage.getHtml();
