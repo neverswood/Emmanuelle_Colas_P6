@@ -1,7 +1,20 @@
-export default class UIModalContact {
-  constructor() {
+export default class FormContact {
+  constructor(photographer) {
     this.modalbg = document.getElementById("bground");
+    this.sectionForm = document.getElementById("sectionForm");
+    this.photographer = photographer;
+
     //this.bodystyle = document.querySelector("body");
+  }
+
+  getHtml() {
+    console.log("rrrr", this.photographer.name);
+    return `
+    <div id="modal-name">
+    <p>Contactez-moi</p>
+    <span>${this.photographer.name}</span>
+    </div>
+    `;
   }
 
   modal({ open }) {
@@ -17,7 +30,9 @@ export default class UIModalContact {
     //const modalName = document.getElementById("modal-name");
     this.modalbg.style.display = "block";
     //this.bodystyle.style.position = "fixed";
-    document.getElementById("sectionForm").className = "sectionFormOpen";
+    this.sectionForm.className = "sectionFormOpen";
+    //this.sectionForm.style.display = "block";
+
     //modalName.style.display = "block";
     document.getElementById("modal-message").style.display = "none";
   }

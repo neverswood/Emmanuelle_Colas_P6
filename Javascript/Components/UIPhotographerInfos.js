@@ -1,4 +1,4 @@
-import UIModalContact from "./UIModalContact.js";
+import FormContact from "./FormContact.js";
 
 export default class UIPhotographerInfos {
   constructor(photographer) {
@@ -7,6 +7,7 @@ export default class UIPhotographerInfos {
   }
 
   getHtml() {
+    console.log("ttt", this.photographer.name);
     return `
     
         <div>
@@ -39,7 +40,7 @@ export default class UIPhotographerInfos {
 
     modalBtn.addEventListener("click", () => {
       //console.log("aaa");
-      new UIModalContact().modal({ open: true });
+      new FormContact().modal({ open: true });
     });
   }
 }

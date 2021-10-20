@@ -1,3 +1,4 @@
+import UIModalContact from "./UIModalContactPage.js";
 import UIPhotographerInfos from "./UIPhotographerInfos.js";
 
 export default class UIPhotographerPage {
@@ -8,7 +9,6 @@ export default class UIPhotographerPage {
       return photographer.id === Number(this.id);
     });
     this.photographer = new UIPhotographerInfos(this.photographerInfos);
-    //this.modalContact = new UIModalContact(dataStore).getHtml();
   }
 
   getHtml() {
