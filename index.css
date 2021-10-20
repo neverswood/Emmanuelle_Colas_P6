@@ -312,7 +312,7 @@ main {
 
 /* Modal Contact */
 
-.bground {
+#bground {
   display: none;
   position: fixed;
   z-index: 1;

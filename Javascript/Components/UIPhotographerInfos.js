@@ -3,7 +3,7 @@ import UIModalContact from "./UIModalContact.js";
 export default class UIPhotographerInfos {
   constructor(photographer) {
     this.photographer = photographer;
-    this.callEvent();
+    // this.callEvent();
   }
 
   getHtml() {
@@ -35,7 +35,10 @@ export default class UIPhotographerInfos {
 
   callEvent() {
     const modalBtn = document.getElementById("open");
+    //const modalBtn = document.querySelectorAll("#open");
+
     modalBtn.addEventListener("click", () => {
+      //console.log("aaa");
       new UIModalContact().modal({ open: true });
     });
   }

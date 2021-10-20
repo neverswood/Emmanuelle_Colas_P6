@@ -1,32 +1,59 @@
-/*export default class UIModalContactPage {
-  constructor(datastore) {}
+export default class UIModalContactPage {
+  constructor() {
+    this.form = document.getElementById("sectionForm");
+    //this.callEvent();
+  }
 
-  LaunchContact() {
-    const modalBtn = document.querySelector(".open");
-    console.log("pouuuuuuu", document.querySelector(".open"));
+  addError(label, message) {
+    document.getElementById(label).style.border = "2px solid red";
+    document.getElementById(`${label}Error`).textContent = message;
+  }
 
-    // Launch modal
-    modalBtn.addEventListener("click", launchModal);
+  removeError(label) {
+    document.getElementById(label).style.border = "none";
+    document.getElementById(`${label}Error`).textContent = "";
+  }
 
-    function launchModal() {
-      console.log("pouuuuuuu", document.querySelector(".open"));
+  callEvent() {
+    this.form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const firstName = document.getElementById("first");
+      const lastName = document.getElementById("last");
+      const email = document.getElementById("email");
+      const emailRegex =
+        /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/;
+      let error = false;
 
-      console.log("youuuuuu", modalbg);
-      modalbg.style.display = "block";
-      bodystyle.style.position = "fixed";
-      document.getElementById("sectionForm").className = "sectionFormOpen";
-      document.getElementById("modal-name").style.display = "block";
-      document.getElementById("modal-message").style.display = "none";
-    }
+      if (firstName.textContent.length < 2) {
+        this.addError("first", "Veuillez entrer 2 caractères minimum");
+        error = true;
+      } else {
+        this.removeError("first");
+      }
 
-    // Close modal
-    function closeModal() {
-      modalbg.style.display = "none";
-      bodystyle.style.position = "relative";
-    }
+      if (lastName.textContent.length < 2) {
+        this.addError("last", "Veuillez entrer 2 caractères minimum");
+        error = true;
+      } else {
+        this.removeError("last");
+      }
 
-    close.addEventListener("click", closeModal);
-    console.log("pouuuuuuu", document.querySelector(".open"));
+      if (!email.textContent.match(emailRegex)) {
+        this.addError("email", "Veuillez entrer un email valide");
+        error = true;
+      } else {
+        this.removeError("email");
+      }
+
+      if (!error) {
+        console.log("modal-name");
+        document.getElementById("modal-name").style.display = "none";
+
+        document.getElementById("sectionForm").className = "sectionFormClose";
+        document.getElementById("modal-message").style.display = "block";
+        document.getElementById("modal-message").innerHTML =
+          "Votre message a bien été envoyé !";
+      }
+    });
   }
 }
-*/
