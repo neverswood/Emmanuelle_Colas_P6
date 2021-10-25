@@ -1,4 +1,4 @@
-import FormContact from "./FormContact.js";
+import UIModalContact from "./UIModalContact.js";
 import UIModalContactPage from "./UIModalContactPage.js";
 import UIModalContact from "./UIModalContactPage.js";
 import UIPhotographerInfos from "./UIPhotographerInfos.js";
@@ -11,7 +11,7 @@ export default class UIPhotographerPage {
       return photographer.id === Number(this.id);
     });
     this.photographer = new UIPhotographerInfos(this.photographerInfos);
-    this.form = new FormContact(this.photographerInfos);
+    this.form = new UIModalContact(this.photographerInfos);
   }
 
   getHtml() {

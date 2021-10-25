@@ -1,4 +1,4 @@
-export default class FormContact {
+export default class UIModalContact {
   constructor(photographer) {
     this.modalbg = document.getElementById("bground");
     this.sectionForm = document.getElementById("sectionForm");

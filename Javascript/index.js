@@ -3,7 +3,7 @@ import UIHomePage from "./Components/UIHomePage.js";
 import UIPhotographerPage from "./Components/UIPhotographerPage.js";
 import UINavigationBarTags from "./Components/UINavigationBarTags.js";
 import UIPhotographerInfos from "./Components/UIPhotographerInfos.js";
-import FormContact from "./Components/FormContact.js";
+import UIModalContact from "./Components/UIModalContact.js";
 import UIModalContactPage from "./Components/UIModalContactPage.js";
 //import UIModalContactPage from "./Components/UIModalContactPage.js";
 

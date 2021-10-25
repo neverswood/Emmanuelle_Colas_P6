@@ -1,4 +1,4 @@
-import FormContact from "./FormContact.js";
+import UIModalContact from "./UIModalContact.js";
 
 export default class UIPhotographerInfos {
   constructor(photographer) {
@@ -34,23 +34,13 @@ export default class UIPhotographerInfos {
         `;
   }
 
-  /*getHtml2() {
-    console.log("rrrr", this.photographer.name);
-    return `
-    <div id="modal-name">
-    <p>Contactez-moi</p>
-    <span>${this.photographer.name}</span>
-    </div>
-    `;
-  }*/
-
   callEvent() {
     const modalBtn = document.getElementById("open");
     //const modalBtn = document.querySelectorAll("#open");
 
     modalBtn.addEventListener("click", () => {
       //console.log("aaa");
-      new FormContact().modal({ open: true });
+      new UIModalContact().modal({ open: true });
     });
   }
 }
