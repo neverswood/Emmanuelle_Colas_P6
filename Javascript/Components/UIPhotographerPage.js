@@ -1,6 +1,4 @@
 import UIModalContact from "./UIModalContact.js";
-import UIModalContactPage from "./UIModalContactPage.js";
-import UIModalContact from "./UIModalContactPage.js";
 import UIPhotographerInfos from "./UIPhotographerInfos.js";
 
 export default class UIPhotographerPage {

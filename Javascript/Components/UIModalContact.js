@@ -40,7 +40,7 @@ export default class UIModalContact {
   closeModal() {
     //document.body.classList.remove("open");
     this.modalbg.style.display = "none";
-    bodystyle.style.position = "relative";
+    //bodystyle.style.position = "relative";
   }
 
   eventBtn() {

@@ -1,4 +1,4 @@
-export default class UIModalContactPage {
+export default class FormContact {
   constructor() {
     this.form = document.getElementById("sectionForm");
     this.callEvent();

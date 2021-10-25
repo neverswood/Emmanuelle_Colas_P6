@@ -4,7 +4,7 @@ import UIPhotographerPage from "./Components/UIPhotographerPage.js";
 import UINavigationBarTags from "./Components/UINavigationBarTags.js";
 import UIPhotographerInfos from "./Components/UIPhotographerInfos.js";
 import UIModalContact from "./Components/UIModalContact.js";
-import UIModalContactPage from "./Components/UIModalContactPage.js";
+import FormContact from "./Components/FormContact.js";
 //import UIModalContactPage from "./Components/UIModalContactPage.js";
 
 async function getDataStore() {
@@ -24,7 +24,7 @@ const main = async () => {
     new UIPhotographerInfos().callEvent();
     document.getElementById("header-form").innerHTML =
       uiPhotographerPage.getHtml2();
-    new UIModalContactPage().callEvent();
+    new FormContact().callEvent();
   } else {
     const uiHomePage = new UIHomePage(dataStore);
     document.getElementById("photographers").innerHTML = uiHomePage.getHtml();
