@@ -408,7 +408,7 @@ label {
   margin: 20px;
 }
 
-#header-form p {
+#header-form {
   margin: auto;
 }
 
@@ -687,7 +687,7 @@ a .arrow {
     margin: 0;
   }
 
-  .sorting {
+  .selectFilter {
     display: none;
   }
 
