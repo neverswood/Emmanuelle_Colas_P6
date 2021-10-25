@@ -27,18 +27,18 @@ export default class FormContact {
   }
 
   launchModal() {
-    //const modalName = document.getElementById("modal-name");
+    const modalName = document.getElementById("modal-name");
     this.modalbg.style.display = "block";
     //this.bodystyle.style.position = "fixed";
     //this.sectionForm.className = "sectionFormOpen";
     //this.sectionForm.style.display = "block";
 
-    //modalName.style.display = "block";
+    modalName.style.display = "block";
     document.getElementById("modal-message").style.display = "none";
   }
 
   closeModal() {
-    document.body.classList.remove("open");
+    //document.body.classList.remove("open");
     this.modalbg.style.display = "none";
     bodystyle.style.position = "relative";
   }

@@ -1,7 +1,7 @@
 export default class UIModalContactPage {
   constructor() {
     this.form = document.getElementById("sectionForm");
-    //this.callEvent();
+    this.callEvent();
   }
 
   addError(label, message) {
@@ -24,21 +24,21 @@ export default class UIModalContactPage {
         /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/;
       let error = false;
 
-      if (firstName.textContent.length < 2) {
+      if (firstName.value.length < 2) {
         this.addError("first", "Veuillez entrer 2 caractères minimum");
         error = true;
       } else {
         this.removeError("first");
       }
 
-      if (lastName.textContent.length < 2) {
+      if (lastName.value.length < 2) {
         this.addError("last", "Veuillez entrer 2 caractères minimum");
         error = true;
       } else {
         this.removeError("last");
       }
 
-      if (!email.textContent.match(emailRegex)) {
+      if (!email.value.match(emailRegex)) {
         this.addError("email", "Veuillez entrer un email valide");
         error = true;
       } else {
