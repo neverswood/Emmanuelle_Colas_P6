@@ -3,13 +3,11 @@ import UIModalContact from "./UIModalContact.js";
 export default class UIPhotographerInfos {
   constructor(photographer) {
     this.photographer = photographer;
-    // this.callEvent();
   }
 
   getHtml() {
     console.log("ttt", this.photographer.name);
     return `
-    
         <div>
         <h1 class="photographer-name">${this.photographer.name}</h1>
         <h2>${(this.photographer.city, this.photographer.country)}</h2>
@@ -34,12 +32,12 @@ export default class UIPhotographerInfos {
         `;
   }
 
-  callEvent() {
+  eventListener() {
     const modalBtn = document.getElementById("open");
     //const modalBtn = document.querySelectorAll("#open");
+    console.log("aaa", modalBtn);
 
     modalBtn.addEventListener("click", () => {
-      //console.log("aaa");
       new UIModalContact().modal({ open: true });
     });
   }

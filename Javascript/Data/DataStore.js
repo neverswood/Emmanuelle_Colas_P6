@@ -19,7 +19,7 @@ export default class DataStore {
         )
     );
 
-    this.medias = data.media.map((mediaObject) => createMedia(mediaObject));
+    this.medias = data.medias.map((mediaObject) => createMedia(mediaObject));
   }
 }
 

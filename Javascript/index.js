@@ -19,12 +19,9 @@ const main = async () => {
   const dataStore = await getDataStore();
   if (window.location.pathname.includes("/photographer.html")) {
     const uiPhotographerPage = new UIPhotographerPage(dataStore);
-    document.getElementById("presentation-photographer").innerHTML =
-      uiPhotographerPage.getHtml();
-    new UIPhotographerInfos().callEvent();
-    document.getElementById("header-form").innerHTML =
-      uiPhotographerPage.getHtml2();
-    new FormContact().callEvent();
+    uiPhotographerPage.draw();
+
+    // new FormContact().callEvent();
   } else {
     const uiHomePage = new UIHomePage(dataStore);
     document.getElementById("photographers").innerHTML = uiHomePage.getHtml();

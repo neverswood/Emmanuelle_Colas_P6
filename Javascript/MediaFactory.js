@@ -9,6 +9,6 @@ export default class MediaFactory {
     } else {
       media = new VideoMedia();
     }
-    return media.createElement(element);
+    return media.getHtml();
   }
 }

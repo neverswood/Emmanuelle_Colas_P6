@@ -16,7 +16,7 @@ export default class UINavBarHomePage {
     return `${this.navigationBarTags.getHtml()}`;
   }
 
-  callEvent() {
+  addEventListener() {
     const tagsBtn = document.getElementById("btnTags");
     tagsBtn.addEventListener("click", function (element) {
       this.tags.newTags(element);

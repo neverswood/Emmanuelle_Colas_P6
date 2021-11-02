@@ -2,10 +2,10 @@ export default class UINavigationBarTags {
   constructor(dataStore) {
     //
     this.photographers = dataStore.photographers;
-    this.callEvent();
+    this.addEventListener();
   }
 
-  callEvent() {
+  addEventListener() {
     const tags = document.querySelectorAll("#btnTags");
     tags.forEach((tag) => {
       const filterName = tag.getAttribute("data-filter");

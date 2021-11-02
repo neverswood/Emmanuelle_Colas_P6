@@ -1,7 +1,7 @@
 export default class FormContact {
   constructor() {
     this.form = document.getElementById("sectionForm");
-    this.callEvent();
+    this.addEventListener();
   }
 
   addError(label, message) {
@@ -14,7 +14,7 @@ export default class FormContact {
     document.getElementById(`${label}Error`).textContent = "";
   }
 
-  callEvent() {
+  addEventListener() {
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
       const firstName = document.getElementById("first");
