@@ -1,7 +1,5 @@
-import Dropdown from "./Dropdown.js";
 import UIModalContact from "./UIModalContact.js";
 import UIPhotographerInfos from "./UIPhotographerInfos.js";
-import Media from "../Data/Media.js";
 import Gallery from "./Gallery.js";
 
 export default class UIPhotographerPage {

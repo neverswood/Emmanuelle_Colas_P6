@@ -6,10 +6,10 @@ export default class Gallery {
   }
 
   getHtml() {
+    console.log("medo", this.medias);
     return this.medias
       .map((media) => {
-        const mediaFactory = new MediaFactory().render(media);
-        console.log(mediaFactory);
+        //const mediaFactory = new MediaFactory().render(media);
         return `
       <div class="box-list-item media" id="item-${media.id}"
       data-id="${media.id}">

@@ -5,10 +5,11 @@ export default class MediaFactory {
   render(element) {
     let media;
     if (element.hasOwnProperty("image")) {
-      media = new ImageMedia();
+      media = new ImageMedia().getHtml();
     } else {
-      media = new VideoMedia();
+      console.log("log", new VideoMedia().getHtml());
+      media = new VideoMedia().getHtml();
     }
-    return media.getHtml();
+    // return media.getHtml();
   }
 }
