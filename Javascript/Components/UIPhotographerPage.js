@@ -21,6 +21,7 @@ export default class UIPhotographerPage {
       this.gallery.sortMedias(event.target.value);
       this.drawGallery();
     });
+    console.log("gam", this.gallery);
   }
 
   drawGallery() {

@@ -1,10 +1,16 @@
-const returnMain = document.getElementById("return-main");
-let home = document.getElementById("home");
+export default class ReturnMain {
+  constructor() {
+    this.returnMain = document.getElementById("return-main");
+    this.home = document.getElementById("home");
+    this.addEvent();
+  }
 
-/// launch div return-main
-function launchReturnMain() {
-  returnMain.style.display = "block";
+  launchReturnMain() {
+    this.returnMain.style.display = "block";
+  }
+
+  addEvent() {
+    this.home.addEventListener("wheel", this.launchReturnMain());
+    this.returnMain.addEventListener("click", this.home);
+  }
 }
-
-home.addEventListener("wheel", launchReturnMain);
-returnMain.addEventListener("click", home);

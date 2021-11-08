@@ -3,6 +3,7 @@ import MediaFactory from "../MediaFactory.js";
 export default class Gallery {
   constructor(medias) {
     this.medias = medias;
+    this.option = document.getElementById("option");
   }
 
   getHtml() {
@@ -58,5 +59,14 @@ export default class Gallery {
         });
         break;
     }
+  }
+
+  deleteSelect() {
+    /*this.option.addEventListener("change", function () {
+      let selected = this.option.selectedIndex;
+      selected.style.display = "none";
+    });*/
+    //let select = document.getElementById("selectFilter");
+    this.option.remove;
   }
 }
