@@ -25,13 +25,41 @@
         </section>
         <section id="work-photographer">
             <div class="sorting">
-                <label for="sorting">Trier par</label>
-                <select id="selectFilter" name="sorting">
-                    <option id="option" value="popularity">Popularité</option>
-                    <option id="option" value="date">Date</option>
-                    <option id="option" value="title">Titre</option>
-                </select>
+                <label for="btn-sort" id="sorting">Trier par</label>
+                <div id="select-option">
+                    <button id="btn-sort" role="button" class="btn btn-sort" aria-haspopup="listbox"
+                        aria-expanded="false" aria-labelledby="arialabel">
+                        <div id="btn-sort__selected"></div>
+                        <span id="btn-sort__arrow"><i class="fas fa-chevron-up"></i></span>
+                    </button>
+                    <div id="select">
+                        <ul class="listOption" id="listOption" role="listbox" aria-activedescendant="date">
+                            <li id="popularity" class="btn-option" role="option" data-value="popularity"
+                                aria-labelledby="btn-popularity" aria-selected="false">
+                                Popularité
+                            </li>
+                            <li id="date" class="btn-option" role="option" data-value="date" aria-labelledby="btn-date"
+                                aria-selected="false">
+                                Date
+                            </li>
+                            <li id="title" class="btn-option" role="option" data-value="title"
+                                aria-labelledby="btn-title" aria-selected="false">
+                                Titre
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!--
+                    
+                    !-->
+                <!--<select id="selectFilter" name="sorting">
+                        <option class="option" value="popularity">Popularité</option>
+                        <option class="option" value="date">Date</option>
+                        <option class="option" value="title">Titre</option>
+                    </select>!-->
             </div>
+
             <div class="box-list" id="box-list">
             </div>
             <div class="likes">
@@ -50,7 +78,7 @@
                             method="get">
                             <div class="formData">
                                 <label for="first">Prénom</label><br>
-                                <input class="text-control" class="not-valid" type="text" id="first" name="first" /><br>
+                                <input class="text-control not-valid" type="text" id="first" name="first" /><br>
                                 <span class="error" id="firstError"></span>
                             </div>
                             <div class="formData">
@@ -64,10 +92,10 @@
                                 <span class="error" id="emailError"></span>
                             </div>
                             <div class="formData">
-                                <label for="message" id="message">Votre message</label><br>
+                                <label for="message">Votre message</label><br>
                                 <input class="text-control--modified" type="text" id="message" name="message" /><br>
                             </div>
-                            <input class="btn-submit" type="submit" class="button" value="Envoyer" />
+                            <input class="btn-submit button" type="submit" value="Envoyer" />
                         </form>
                     </div>
                 </div>
@@ -88,6 +116,7 @@
                 </div>
                 <a href="#" id="right-btn" class="btn-arrow" aria-label="next-image"
                     aria-controls="carousel-list-items"><i class="arrow"></i></a>
+            </div>
 
         </section>
 

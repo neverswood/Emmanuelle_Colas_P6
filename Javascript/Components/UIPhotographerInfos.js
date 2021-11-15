@@ -6,7 +6,6 @@ export default class UIPhotographerInfos {
   }
 
   getHtml() {
-    console.log("ttt", this.photographer.name);
     return `
         <div>
         <h1 class="photographer-name">${this.photographer.name}</h1>
@@ -35,7 +34,6 @@ export default class UIPhotographerInfos {
   eventListener() {
     const modalBtn = document.getElementById("open");
     //const modalBtn = document.querySelectorAll("#open");
-    console.log("aaa", modalBtn);
 
     modalBtn.addEventListener("click", () => {
       new UIModalContact().modal({ open: true });

@@ -188,14 +188,17 @@ main {
 }
 
 .open {
-  order: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  /*order: 0;
   background-color: #901c1c;
   height: 55px;
   width: 130px;
   color: white;
   border: transparent;
   border-radius: 5px;
-  margin: 50px 400px 50px 50px;
+  margin: 50px 400px 50px 50px;*/
 }
 
 .image-photographer {
@@ -209,21 +212,117 @@ main {
 
 .sorting label {
   font-weight: bold;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
-.sorting select {
+.sorting .select {
+  color: white;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+.active-option {
+  color: #fff;
+  background-color: #901c1c;
+  border: 1px solid transparent;
+}
+
+.media__container {
+  width: 350px;
+  cursor: pointer;
+  -webkit-animation: fade-in 2s forwards;
+  animation: fade-in 2s forwards;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#select-option {
+  display: inline-block;
+  position: absolute;
+  border: none;
+  border-radius: 5px;
+  min-width: 165px;
+  background-color: #901c1c;
+}
+
+#btn-sort,
+#btn-sort__selected {
   background-color: #901c1c;
   color: white;
   border: none;
   border-radius: 5px;
-  width: 170px;
-  height: 40px;
-  padding: 0 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  /*height: 50px;
+  width: 168px;
+  padding: 0 10px;*/
+}
+
+#btn-sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 1rem;
+}
+
+#btn-sort__selected {
+  padding: 0.2rem 0;
+}
+
+.listOption {
+  display: none;
+
+  /*list-style: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-color: #901c1c;
+  border-radius: 5px;
+  width: 168px;
+  margin: 0;
+  padding: 1px;*/
+}
+
+.select li:first-of-type {
+  padding-top: 0;
+}
+
+.btn-option {
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 1px solid;
+  color: white;
+  /*background-color: #901c1c;
+  height: 50px;
+  width: 158px;
+  text-align: inherit;
+  font-size: 18px;
+  margin-left: 10px;
+  border: none;*/
+}
+
+.select i {
+  position: absolute;
+  right: 18px;
 }
 /*
 .sorting select::after {
 }*/
+
+.select option[selected] {
+  display: none;
+}
+
+#selectFilter * {
+  background-color: palevioletred;
+}
+
+#selectFilter .hidden * {
+  display: none;
+}
 
 .image-photographerBox {
   width: 300px;
@@ -635,14 +734,14 @@ a .arrow {
     font-size: 12px;
   }
 
-  .open {
+  /*.open {
     order: 2;
     position: fixed;
     right: 110px;
     bottom: 0;
     margin: 50px;
     padding: 10px 35px;
-  }
+  }*/
 
   /**/
 

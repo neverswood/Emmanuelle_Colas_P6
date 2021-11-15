@@ -10,7 +10,7 @@ export default class ReturnMain {
   }
 
   addEvent() {
-    this.home.addEventListener("wheel", this.launchReturnMain());
+    this.home.addEventListener("wheel", () => this.launchReturnMain());
     this.returnMain.addEventListener("click", this.home);
   }
 }

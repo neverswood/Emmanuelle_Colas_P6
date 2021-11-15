@@ -4,7 +4,6 @@ import VideoMedia from "../VideoMedia.js";
 
 export default class DataStore {
   constructor(data) {
-    console.log("lol", data);
     this.photographers = data.photographers.map(
       (photographerObject) =>
         new Photographer(
@@ -23,6 +22,7 @@ export default class DataStore {
   }
 }
 
+// Factory Pattern //
 function createMedia(mediaObject) {
   if ("image" in mediaObject) {
     return new ImageMedia(

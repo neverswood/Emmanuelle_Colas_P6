@@ -1,6 +1,7 @@
 import UIModalContact from "./UIModalContact.js";
 import UIPhotographerInfos from "./UIPhotographerInfos.js";
 import Gallery from "./Gallery.js";
+import Dropdown from "./Dropdown.js";
 
 export default class UIPhotographerPage {
   constructor(dataStore) {
@@ -15,13 +16,22 @@ export default class UIPhotographerPage {
     this.photographerInfos = new UIPhotographerInfos(this.photographer);
     this.form = new UIModalContact(this.photographer);
     this.gallery = new Gallery(this.mediaPhotographerList);
-    const selectedFilter = document.getElementById("selectFilter");
+    this.dropdown = new Dropdown(this.mediaPhotographerList);
+    const selectedFilter = document.getElementById("listOption");
     this.gallery.sortMedias(selectedFilter.value);
     selectedFilter.addEventListener("change", (event) => {
       this.gallery.sortMedias(event.target.value);
+      this.gallery.deleteSelect(event.target.value);
       this.drawGallery();
+      this.dropdown.openCloseDropdown();
+      //this.dropdown.filterByOption();
     });
-    console.log("gam", this.gallery);
+    ////A regarder
+    /*this.options = document.querySelectorAll(".btn-option");
+    this.options.forEach((option) => {
+      const filterOptions = option.getAttribute("data-value");
+      new Dropdown().filterByOption(filterOptions);
+    });*/
   }
 
   drawGallery() {
@@ -35,6 +45,10 @@ export default class UIPhotographerPage {
       this.getHtmlFormcontact();
     this.drawGallery();
     this.photographerInfos.eventListener();
+    this.dropdown.addEvent();
+    //this.dropdown.filterByOption();
+
+    //document.getElementById("select-option").innerHTML = this.getDropdownHtml();
   }
 
   getHtmlPhotographerPresentation() {
@@ -48,4 +62,8 @@ export default class UIPhotographerPage {
   getGalleryHtml() {
     return this.gallery.getHtml();
   }
+
+  /*getDropdownHtml() {
+    return this.dropdown.getHtml();
+  }*/
 }

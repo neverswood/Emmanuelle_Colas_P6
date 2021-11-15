@@ -8,7 +8,6 @@ export default class UIModalContact {
   }
 
   getHtml() {
-    console.log("rrrr", this.photographer.name);
     return `
     <div id="modal-name">
     <p>Contactez-moi</p>
