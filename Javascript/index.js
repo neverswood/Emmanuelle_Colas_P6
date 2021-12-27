@@ -21,13 +21,13 @@ const main = async () => {
   if (window.location.pathname.includes("/photographer.html")) {
     const uiPhotographerPage = new UIPhotographerPage(dataStore);
     uiPhotographerPage.draw();
-    new Dropdown().attachselectedOption();
+    //new Dropdown().attachselectedOption();
 
-    const options = document.querySelectorAll(".btn-option");
+    /* const options = document.querySelectorAll(".btn-option");
     options.forEach((option) => {
       const filterOptions = option.getAttribute("data-value");
       new Dropdown().filterByOption(filterOptions);
-    });
+    });*/
 
     /*const options = document.querySelectorAll(".btn-option");
     const filterOptions = options.getAttribute("data-value");

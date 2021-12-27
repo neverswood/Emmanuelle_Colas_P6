@@ -1,8 +1,14 @@
 export default class Gallery {
-  constructor(medias) {
+  constructor(medias, dataStore) {
+    if (Gallery.isCreated) {
+      throw new Exception("Gallery already created");
+    }
     this.medias = medias;
     this.options = document.querySelectorAll(".btn-option");
-    this.filterOptions();
+    //this.filterOptions();
+    //this.incrementLike();
+
+    Gallery.isCreated = true;
   }
 
   getHtml() {
@@ -13,10 +19,16 @@ export default class Gallery {
       data-id="${media.id}">
       ${media.getHtml()}
       <div class="box-list-presentation">
+      <div class="box-list-presentation__titleDate">
       <p>${media.title}</p>
       <span class="date">${media.date}</span>
-      <span class="price">${media.price}</span>
-      <span>${media.likes} <i class="fas fa-heart" class="like"></i></span>
+      </div>
+      <div class="box-list-presentation__priceLike">
+      <span class="price">${media.price}€</span>
+      <span>${
+        media.likes
+      } <i class="fas fa-heart" class="like" id="like"></i></span>
+      </div>
       </div>
       </div>`;
       })
@@ -74,7 +86,7 @@ export default class Gallery {
     console.log("jo", optionValue);
   }
 
-  filterOptions() {
+  /*filterOptions() {
     this.options.forEach((option) => {
       option.addEventListener("click", () => {
         // Choosing the correct parameter
@@ -90,5 +102,24 @@ export default class Gallery {
         }
       });
     });
+  }*/
+
+  incrementLike(data) {
+    console.log(this.photographerPage);
+
+    console.log(this.photographerMedia);
+    this.photographerMedia.forEach(() => {
+      const mediumLikes = this.medias.likes;
+      const likeElement = null;
+    });
+    mediumLikes++;
+    likeElement;
+    sumLike++;
+    //mediumLikes++;
+    console.log(this.sumLike);
+    document.getElementById(
+      "like"
+    ).innerHTML = `${mediumLikes} <i class="fas fa-heart" class="like"></i>`;
+    //photographerPageDivLike.innerHTML = `${sumLike} <i class="fas fa-heart"></i>`;
   }
 }
