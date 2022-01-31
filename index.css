@@ -303,6 +303,10 @@ main {
   height: 50px;
 }
 
+.fa-chevron-down {
+  display: none;
+}
+
 .listOption {
   /*display: none;*/
   list-style: none;

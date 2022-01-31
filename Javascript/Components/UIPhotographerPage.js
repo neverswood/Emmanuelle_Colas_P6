@@ -5,6 +5,7 @@ import Dropdown from "./Dropdown.js";
 
 export default class UIPhotographerPage {
   constructor(dataStore) {
+    this.medias = dataStore.medias;
     const url = new URLSearchParams(window.location.search);
     this.id = url.get("id");
     this.photographer = dataStore.photographers.find((photographer) => {
@@ -19,7 +20,7 @@ export default class UIPhotographerPage {
     this.photographerInfos = new UIPhotographerInfos(this.photographer);
     this.form = new UIModalContact(this.photographer);
     this.gallery = new Gallery(this.mediaPhotographerList);
-    this.dropdown = new Dropdown(this.mediaPhotographerList);
+    this.dropdown = new Dropdown(this.mediaPhotographerList, this);
     this.sumLike = this.mediaPhotographerList.reduce(
       (currentSumLike, medium) => {
         return medium.likes + currentSumLike;
@@ -27,16 +28,17 @@ export default class UIPhotographerPage {
       0
     );
     this.likeElement = null;
-    this.mediaLike = this.mediaPhotographerList.forEach((media) => {
+    this.mediaLike = dataStore.medias.forEach((media) => {
       return media.likes;
     });
     const selectedFilter = document.getElementById("listOption");
-    this.gallery.sortMedias(selectedFilter.value);
+    //this.dropdown.sortMedias(selectedFilter.value);
     selectedFilter.addEventListener("change", (event) => {
-      this.gallery.sortMedias(event.target.value);
+      this.dropdown.sortMedias(event.target.value);
       this.gallery.deleteSelect(event.target.value);
       this.drawGallery();
     });
+
     //this.dropdown.openCloseDropdown();*/
     //this.dropdown.filterByOption();
     //});
@@ -46,12 +48,12 @@ export default class UIPhotographerPage {
       const filterOptions = option.getAttribute("data-value");
       new Dropdown().filterByOption(filterOptions);
     });*/
-    this.incrementLike();
   }
 
   drawGallery() {
     console.log(this.mediaPhotographerList);
     document.getElementById("box-list").innerHTML = this.getGalleryHtml();
+    this.incrementLike();
   }
 
   draw() {
@@ -61,6 +63,7 @@ export default class UIPhotographerPage {
       this.getHtmlFormcontact();
     this.drawGallery();
     this.photographerInfos.eventListener();
+
     //this.dropdown.addEvent();
     //this.dropdown.filterByOption();
 
@@ -84,13 +87,26 @@ export default class UIPhotographerPage {
   }*/
 
   incrementLike() {
-    console.log(this.mediaLike);
-
-    this.mediumLikes++;
+    console.log("log", document.querySelectorAll(".likeHeart"));
+    const spanLike = document.querySelectorAll("ilike");
+    const like = document.querySelectorAll(".likeHeart");
+    console.log("arr", like.length);
+    for (let index = 0; index < like.length; index++) {
+      console.log("in", like[index]);
+      like[index].addEventListener("click", () => {
+        this.medias[index].likes++;
+        console.log("sum", this.sumLike++);
+      });
+    }
+    /*this.medias.map((media) => {
+      console.log("like", media.likes);
+    });*/
+    /* this.mediumLikes++;
     this.likeElement;
-    this.sumLike++;
+    this.sumLike++;*/
     //mediumLikes++;
-    console.log(this.sumLike);
+    /*console.log(this.sumLike);
+    console.log(sumsum);*/
     /*document.getElementById(
       "like"
     ).innerHTML = `${this.mediumLikes} <i class="fas fa-heart" class="like"></i>`;*/
