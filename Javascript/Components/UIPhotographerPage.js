@@ -48,12 +48,15 @@ export default class UIPhotographerPage {
       const filterOptions = option.getAttribute("data-value");
       new Dropdown().filterByOption(filterOptions);
     });*/
+    this.counterVal = 0;
   }
 
   drawGallery() {
     console.log(this.mediaPhotographerList);
     document.getElementById("box-list").innerHTML = this.getGalleryHtml();
-    this.incrementLike();
+    document.querySelector(".likes-price").innerHTML =
+      this.displayLikesAndPrice();
+    this.incrementLikes();
   }
 
   draw() {
@@ -82,34 +85,32 @@ export default class UIPhotographerPage {
     return this.gallery.getHtml();
   }
 
-  /*getDropdownHtml() {
-    return this.dropdown.getHtml();
-  }*/
+  // increment Likes
+  displayLikesAndPrice() {
+    return `<div>
+  <span class="totalLike">${this.sumLike} <i class="fas fa-heart"></i></span>
+  <span class="price"></span>
+  </div>`;
+  }
 
-  incrementLike() {
-    console.log("log", document.querySelectorAll(".likeHeart"));
-    const spanLike = document.querySelectorAll("ilike");
+  incrementLikes() {
     const like = document.querySelectorAll(".likeHeart");
-    console.log("arr", like.length);
     for (let index = 0; index < like.length; index++) {
-      console.log("in", like[index]);
       like[index].addEventListener("click", () => {
-        this.medias[index].likes++;
-        console.log("sum", this.sumLike++);
+        this.resetLikes(this.sumLike++);
       });
     }
-    /*this.medias.map((media) => {
-      console.log("like", media.likes);
-    });*/
-    /* this.mediumLikes++;
-    this.likeElement;
-    this.sumLike++;*/
-    //mediumLikes++;
-    /*console.log(this.sumLike);
-    console.log(sumsum);*/
-    /*document.getElementById(
-      "like"
-    ).innerHTML = `${this.mediumLikes} <i class="fas fa-heart" class="like"></i>`;*/
-    //photographerPageDivLike.innerHTML = `${sumLike} <i class="fas fa-heart"></i>`;
+  }
+
+  resetLikes() {
+    this.displaySumLikes(this.sumLike);
+  }
+
+  displaySumLikes(val) {
+    document.getElementsByClassName("totalLikes").innerHTML = this.sumLike;
+
+    document.querySelector(
+      ".likes"
+    ).innerHTML = `<span class="totalLikes">${val} <i class="fas fa-heart"></i></span>`;
   }
 }
